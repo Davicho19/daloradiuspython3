@@ -1,24 +1,24 @@
 #!/usr/bin/env python
 import os
 
-os.system("clear")
+#os.system("clear")
 
-print("En este momento se actulizara su servidor ubuntu-server o Debian")
+#print("En este momento se actulizara su servidor ubuntu-server o Debian")
 os.system("apt update -y")
 #os.system("apt dist-upgrade -y")
 
 #instalacion de mariadb
-os.system("apt install net-tools")
-os.system("apt --no-install-recommends install mariadb-server -y")
-print("Debe ajustar su contraseña de root para su base de datos maria db")
-os.system("mariadb-secure-installation")
-os.system("clear")
+#os.system("apt install net-tools")
+#os.system("apt --no-install-recommends install mariadb-server -y")
+#print("Debe ajustar su contraseña de root para su base de datos maria db")
+#os.system("mariadb-secure-installation")
+#os.system("clear")
 
 #configuracion de base de datos usuario y contraseña
 os.system("mysql -u root -e" "CREATE DATABASE raddb;")
-os.system("mysql -u root -e" "GRANT ALL ON raddb.* TO 'raduser'@'localhost' IDENTIFIED BY 'radpass';")
-os.system("mysql -u root -e" "FLUSH PRIVILEGES;")
-os.system("clear")
+#os.system("mysql -u root -e" "GRANT ALL ON raddb.* TO 'raduser'@'localhost' IDENTIFIED BY 'radpass';")
+#os.system("mysql -u root -e" "FLUSH PRIVILEGES;")
+#os.system("clear")
 
 #os.system("systemctl enable mariadb")
 
