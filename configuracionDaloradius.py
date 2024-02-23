@@ -20,12 +20,12 @@ os.system("mysql -u root -e" "GRANT ALL ON raddb.* TO 'raduser'@'localhost' IDEN
 os.system("mysql -u root -e" "FLUSH PRIVILEGES;")
 os.system("clear")
 
-os.system("systemctl enable mariadb")
+#os.system("systemctl enable mariadb")
 
 #instalacion de freeradius
-os.system("apt --no-install-recommends install freeradius freeradius-mysql mariadb-client")
-os.system("cd /etc/freeradius/3.0/mods-config/sql/main/mysql")
-os.system("mariadb -u root raddb < schema.sql")
+#os.system("apt --no-install-recommends install freeradius freeradius-mysql mariadb-client")
+#os.system("cd /etc/freeradius/3.0/mods-config/sql/main/mysql")
+#os.system("mariadb -u root raddb < schema.sql")
 
 
 os.system("cd /etc/freeradius/3.0/mods-available/")
