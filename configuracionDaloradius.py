@@ -47,6 +47,8 @@ import os
 
 #os.system("apt --no-install-recommends install git")
 os.system("cd /var/www")
+
+print("Descargando los archivos de daloradius")
 os.system("git clone https://github.com/lirantal/daloradius.git")
 
 
