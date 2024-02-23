@@ -46,8 +46,8 @@ import os
 
 
 #os.system("apt --no-install-recommends install git")
-#os.system("cd /var/www")
-#os.system("git clone https://github.com/lirantal/daloradius.git")
+os.system("cd /var/www")
+os.system("git clone https://github.com/lirantal/daloradius.git")
 
 
 #os.system("mkdir -p /var/log/apache2/daloradius/{operators,users}")
@@ -72,13 +72,13 @@ import os
 #print("Listen \${DALORADIUS_OPERATORS_PORT}")
 #print("EOF")
 
-virtual=open("/etc/apache2/sites-available/operators.conf", "w")
-virtual.write("<VirtualHost *:\${DALORADIUS_OPERATORS_PORT}>\nServerAdmin \${DALORADIUS_SERVER_ADMIN}\nDocumentRoot \${DALORADIUS_ROOT_DIRECTORY}/app/operators\n<Directory \${DALORADIUS_ROOT_DIRECTORY}/app/operators>\nOptions -Indexes +FollowSymLinks\nAllowOverride All\nRequire all granted\n</Directory>\n<Directory \${DALORADIUS_ROOT_DIRECTORY}>\nRequire all denied\n</Directory>\nErrorLog \${APACHE_LOG_DIR}/daloradius/operators/error.log\nCustomLog \${APACHE_LOG_DIR}/daloradius/operators/access.log combined\n</VirtualHost>")
-virtual.close()
+#virtual=open("/etc/apache2/sites-available/operators.conf", "w")
+#virtual.write("<VirtualHost *:\${DALORADIUS_OPERATORS_PORT}>\nServerAdmin \${DALORADIUS_SERVER_ADMIN}\nDocumentRoot \${DALORADIUS_ROOT_DIRECTORY}/app/operators\n<Directory \${DALORADIUS_ROOT_DIRECTORY}/app/operators>\nOptions -Indexes +FollowSymLinks\nAllowOverride All\nRequire all granted\n</Directory>\n<Directory \${DALORADIUS_ROOT_DIRECTORY}>\nRequire all denied\n</Directory>\nErrorLog \${APACHE_LOG_DIR}/daloradius/operators/error.log\nCustomLog \${APACHE_LOG_DIR}/daloradius/operators/access.log combined\n</VirtualHost>")
+#virtual.close()
 
-virtual2=open("/etc/apache2/sites-available/users.conf", "w")
-virtual2.write("<VirtualHost *:\${DALORADIUS_USERS_PORT}>\nServerAdmin \${DALORADIUS_SERVER_ADMIN}\nDocumentRoot \${DALORADIUS_ROOT_DIRECTORY}/app/users\n<Directory \${DALORADIUS_ROOT_DIRECTORY}/app/users>\nOptions -Indexes +FollowSymLinks\nAllowOverride None\nRequire all granted\n</Directory>\n<Directory \${DALORADIUS_ROOT_DIRECTORY}>\nRequire all denied\n</Directory>\nErrorLog \${APACHE_LOG_DIR}/daloradius/users/error.log\nCustomLog \${APACHE_LOG_DIR}/daloradius/users/access.log combined\n</VirtualHost>\n")
-virtual2.close()    
+#virtual2=open("/etc/apache2/sites-available/users.conf", "w")
+#virtual2.write("<VirtualHost *:\${DALORADIUS_USERS_PORT}>\nServerAdmin \${DALORADIUS_SERVER_ADMIN}\nDocumentRoot \${DALORADIUS_ROOT_DIRECTORY}/app/users\n<Directory \${DALORADIUS_ROOT_DIRECTORY}/app/users>\nOptions -Indexes +FollowSymLinks\nAllowOverride None\nRequire all granted\n</Directory>\n<Directory \${DALORADIUS_ROOT_DIRECTORY}>\nRequire all denied\n</Directory>\nErrorLog \${APACHE_LOG_DIR}/daloradius/users/error.log\nCustomLog \${APACHE_LOG_DIR}/daloradius/users/access.log combined\n</VirtualHost>\n")
+#virtual2.close()    
 
 
 #os.system("cd /var/www/daloradius/app/common/includes")
