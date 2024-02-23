@@ -4,7 +4,7 @@ import os
 #os.system("clear")
 
 #print("En este momento se actulizara su servidor ubuntu-server o Debian")
-os.system("apt update -y")
+#os.system("apt update -y")
 #os.system("apt dist-upgrade -y")
 
 #instalacion de mariadb
@@ -15,7 +15,7 @@ os.system("apt update -y")
 #os.system("clear")
 
 #configuracion de base de datos usuario y contraseña
-os.system("mysql -u root -e" "CREATE DATABASE raddb;")
+#os.system("mysql -u root -e" "CREATE DATABASE raddb;")
 #os.system("mysql -u root -e" "GRANT ALL ON raddb.* TO 'raduser'@'localhost' IDENTIFIED BY 'radpass';")
 #os.system("mysql -u root -e" "FLUSH PRIVILEGES;")
 #os.system("clear")
@@ -23,7 +23,7 @@ os.system("mysql -u root -e" "CREATE DATABASE raddb;")
 #os.system("systemctl enable mariadb")
 
 #instalacion de freeradius
-#os.system("apt --no-install-recommends install freeradius freeradius-mysql mariadb-client")
+os.system("apt --no-install-recommends install freeradius freeradius-mysql mariadb-client")
 #os.system("cd /etc/freeradius/3.0/mods-config/sql/main/mysql")
 #os.system("mariadb -u root raddb < schema.sql")
 
@@ -34,11 +34,11 @@ os.system("mysql -u root -e" "CREATE DATABASE raddb;")
 
 #os.system("ln -s /etc/freeradius/3.0/mods-available/sql /etc/freeradius/3.0/mods-enabled/")
 
-#os.system("systemctl enable freeradius")
-#os.system("systemctl restart freeradius")
+os.system("systemctl enable freeradius")
+os.system("systemctl restart freeradius")
 
 
-#os.system("apt --no-install-recommends install apache2 php libapache2-mod-php \
+os.system("apt --no-install-recommends install apache2 php libapache2-mod-php \
 #                                    php-mysql php-zip php-mbstring php-common php-curl \
 #                                    php-gd php-db php-mail php-mail-mime \
 #                                    mariadb-client freeradius-utils")
@@ -46,8 +46,8 @@ os.system("mysql -u root -e" "CREATE DATABASE raddb;")
 
 
 #os.system("apt --no-install-recommends install git")
-#os.system("cd /var/www")
-#os.system("git clone https://github.com/lirantal/daloradius.git")
+os.system("cd /var/www")
+os.system("git clone https://github.com/lirantal/daloradius.git")
 
 
 #os.system("mkdir -p /var/log/apache2/daloradius/{operators,users}")
