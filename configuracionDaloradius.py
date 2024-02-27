@@ -15,10 +15,10 @@ import os
 #os.system("clear")
 
 #configuracion de base de datos usuario y contraseña
-#os.system("mysql -u root -e" "CREATE DATABASE raddb;")
-#os.system("mysql -u root -e" "GRANT ALL ON raddb.* TO 'raduser'@'localhost' IDENTIFIED BY 'radpass';")
-#os.system("mysql -u root -e" "FLUSH PRIVILEGES;")
-#os.system("clear")
+os.system("mysql -u root -e ""CREATE DATABASE raddb;")
+os.system("mysql -u root -e ""GRANT ALL ON raddb.* TO 'raduser'@'localhost' IDENTIFIED BY 'radpass';")
+os.system("mysql -u root -e ""FLUSH PRIVILEGES;")
+os.system("clear")
 
 #os.system("systemctl enable mariadb")
 
@@ -46,26 +46,26 @@ import os
 
 
 #os.system("apt --no-install-recommends install git")
-os.system("cd /var/www")
+#os.system("cd /var/www")
 
-print("------------------------------------------")
-print("--Descargando los archivos de daloradius--")
-print("------------------ -----------------------")
-os.system("git clone https://github.com/lirantal/daloradius.git")
+#print("------------------------------------------")
+#print("--Descargando los archivos de daloradius--")
+#print("------------------ -----------------------")
+#os.system("git clone https://github.com/lirantal/daloradius.git")
 
 
 #os.system("mkdir -p /var/log/apache2/daloradius/{operators,users}")
 #print("Ejecuta el siguiente parrafo")
 
-env=open("/etc/apache2/envvars")
-env.write("# daloRADIUS users interface port\nexport DALORADIUS_USERS_PORT=80\ln#daloRADIUS operators interface port\lnexport DALORADIUS_OPERATORS_PORT=8000\ln# daloRADIUS package root directory\lnexport DALORADIUS_ROOT_DIRECTORY=/var/www/daloradius\n# daloRADIUS administrator's email\lnexport DALORADIUS_SERVER_ADMIN=admin@daloradius.local")
-env.close()
+#env=open("/etc/apache2/envvars")
+#env.write("# daloRADIUS users interface port\nexport DALORADIUS_USERS_PORT=80\ln#daloRADIUS operators interface port\lnexport DALORADIUS_OPERATORS_PORT=8000\ln# daloRADIUS package root directory\lnexport DALORADIUS_ROOT_DIRECTORY=/var/www/daloradius\n# daloRADIUS administrator's email\lnexport DALORADIUS_SERVER_ADMIN=admin@daloradius.local")
+#env.close()
 
 
 #print("Copia y ejecuta los siguientes comandos")
-ports=open("/etc/apache2/ports.conf")
-ports.write("# daloRADIUS\nListen \${DALORADIUS_USERS_PORT}\nListen \${DALORADIUS_OPERATORS_PORT}")
-ports.close()
+#ports=open("/etc/apache2/ports.conf")
+#ports.write("# daloRADIUS\nListen \${DALORADIUS_USERS_PORT}\nListen \${DALORADIUS_OPERATORS_PORT}")
+#ports.close()
 
 #virtual=open("/etc/apache2/sites-available/operators.conf", "w")
 #virtual.write("<VirtualHost *:\${DALORADIUS_OPERATORS_PORT}>\nServerAdmin \${DALORADIUS_SERVER_ADMIN}\nDocumentRoot \${DALORADIUS_ROOT_DIRECTORY}/app/operators\n<Directory \${DALORADIUS_ROOT_DIRECTORY}/app/operators>\nOptions -Indexes +FollowSymLinks\nAllowOverride All\nRequire all granted\n</Directory>\n<Directory \${DALORADIUS_ROOT_DIRECTORY}>\nRequire all denied\n</Directory>\nErrorLog \${APACHE_LOG_DIR}/daloradius/operators/error.log\nCustomLog \${APACHE_LOG_DIR}/daloradius/operators/access.log combined\n</VirtualHost>")
